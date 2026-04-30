@@ -127,6 +127,9 @@ class EsetKeygen(object):
         logging.info(f'[{self.mode}] Request sending...')
         console_log(f'\n[{self.mode}] Request sending...', INFO, silent_mode=SILENT_MODE)
         self.driver.get('https://home.eset.com/subscriptions/choose-trial')
+        print(self.driver.current_url)
+        print(self.driver.page_source[:2000])
+        uCE(self.driver, f"return {GET_EBAV}('button', 'data-label' 'onboarding-welcome-skip-introduction-btn') != null")
         uCE(self.driver, f"return {GET_EBAV}('button', 'data-label', 'subscription-choose-trial-ehsp-card-button') != null")
         if self.mode == 'ESET HOME':
             uCE(self.driver, f"return {CLICK_WITH_BOOL}({GET_EBAV}('button', 'data-label', 'subscription-choose-trial-ehsp-card-button'))")
