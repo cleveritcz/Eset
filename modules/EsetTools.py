@@ -128,7 +128,6 @@ class EsetKeygen(object):
         console_log(f'\n[{self.mode}] Request sending...', INFO, silent_mode=SILENT_MODE)
         self.driver.get('https://home.eset.com/subscriptions/choose-trial')
         print(self.driver.current_url)
-        print(self.driver.page_source)
         uCE(self.driver, f"return {GET_EBAV}('button', 'data-label' 'onboarding-welcome-skip-introduction-btn') != null")
         print("a" + self.driver.current_url)
         uCE(self.driver, f"return {GET_EBAV}('button', 'data-label', 'subscription-choose-trial-ehsp-card-button') != null")
