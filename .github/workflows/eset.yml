@@ -79,10 +79,7 @@ jobs:
 
       - name: Checkout Repository
         uses: actions/checkout@v5
-
-#      - name: Clone Repository
-#        run: git clone -b "${{ steps.vars.outputs.branch }}" https://github.com/rzc0d3r/ESET-KeyGen.git
-
+        
       - name: Setup & Run Script (Linux/macOS)
         if: runner.os != 'Windows'
         shell: bash
@@ -90,8 +87,7 @@ jobs:
           if [[ "$RUNNER_OS" == "macOS" ]]; then
             brew install python@3.11 || true
           else
-            sudo apt update
-            sudo apt install -y python3-pip python3-venv
+            echo "Nothing to install."
           fi
 
           python3 -m venv venv
