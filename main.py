@@ -567,7 +567,7 @@ def main(disable_exit=False):
                 if args['key'] or args['small_business_key'] or args['vpn_codes']:
                     output_filename = 'ESET KEYS.txt'
                     EK_obj = EK(email_obj, DRIVER, 'ESET HOME' if args['key'] else 'SMALL BUSINESS')
-                    print(email_obj)
+                    print(email_obj.email, e_passwd)
                     EK_obj.sendRequestForKey()
                     
                     l_name, l_key, l_out_date = EK_obj.getLD()
